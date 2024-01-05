@@ -1,9 +1,6 @@
-> 简单来说这还是造轮子，但是是因为我用别人轮子遇到了麻烦，一难调试二文档不全，虽然就几行配置，但是我是真的佩服就几行配置都难倒了我。跑起来了是跑起来了，但是工作是真的不正常。这里的阅后即焚目前来说是相对的，你需要手动清理。
+### 原仓库地址：https://github.com/rev1si0n/another-tmp-mailbox
 
-无需注册，独立邮箱地址，支持富文本的邮件（html），支持 RSS 订阅，自动刷新，可手动删除账号。
-
-好了我把链接贴上来 [denghongcai/forsaken-mail](https://github.com/denghongcai/forsaken-mail)，嗯就是它。
-前端是直接偷的上面那个项目稍作修改我真不会前端[┑(￣Д ￣)┍]。 后端源代码稳定后再放上来，也就不到两百行。
+添加多域名支持。
 
 ### 这是干嘛的
 
@@ -39,7 +36,7 @@
 # cd 到源码文件夹
 $ docker build -t tmpmail .
 # 等待结束，随后自行修改下方 yaml 中的 domain 及相关端口配置
-# 找到 ["python3", "-u", "/usr/local/tmpmail/main.py", "-port=8080", "-domain=YOUR.DOMAIN"]
+# 找到 ["python3", "-u", "/usr/local/tmpmail/main.py", "-port=8080", "-domain=example1.com,example2.com"]
 # 将 8080 修改为你想要的端口（用来web访问），将 YOUR.DOMAIN 修改为你的域名，随后启动即可
 $ docker-compose -f docker-compose.yaml up -d
 ```
