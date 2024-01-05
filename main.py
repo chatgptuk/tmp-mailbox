@@ -240,7 +240,7 @@ def schd_cleaner(seconds, interval):
 
 
 if __name__ == "__main__":
-    define("domain", type=str)
+    define("domain", multiple=True, type=str)
     define("database", type=str, default="mail.db")
     define("listen", type=str, default="0.0.0.0")
     define("port", type=int, default=8888)
@@ -272,7 +272,7 @@ if __name__ == "__main__":
     server.listen(options.port, address=options.listen,
                   xheaders=True)
 
-    SmtpdHandler.domains.append(options.domain)
+    SmtpdHandler.domains.extend(options.domain)
     smtp = Controller(SmtpdHandler(), hostname="0.0.0.0",
                       port=25)
     smtp.start()
