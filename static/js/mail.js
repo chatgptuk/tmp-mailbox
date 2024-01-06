@@ -32,6 +32,8 @@
 	})
 	UUID = null
 	setAddress = function(uuid) {
+		var randomIndex = Math.floor(Math.random() * DOMAIN.length);
+	        var DOMAIN = DOMAIN[randomIndex];
 		$("#address")[0].value = uuid + "@" + DOMAIN
 		$('#address').parent().attr('data-clipboard-text', uuid + "@" + DOMAIN);
 		$('#rss-link').attr('data-clipboard-text', (window.location.origin + window.location.pathname + "/mail/" + uuid + "/rss").replace(RegExp('//mail/', 'g'), "/mail/"));
