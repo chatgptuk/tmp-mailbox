@@ -32,9 +32,13 @@
 	})
 	UUID = null
 	setAddress = function(uuid) {
-		var randomIndex = Math.floor(Math.random() * DOMAIN.length);
-		var selectedDomain = DOMAIN[randomIndex];
-		$("#address")[0].value = uuid + "@" + selectedDomain
+    var selectedDomain = localStorage.getItem('selectedDomain');
+    if (!selectedDomain) {
+        var randomIndex = Math.floor(Math.random() * DOMAIN.length);
+        selectedDomain = DOMAIN[randomIndex];
+        localStorage.setItem('selectedDomain', selectedDomain);
+    }
+    $("#address")[0].value = uuid + "@" + selectedDomain;
 		$('#address').parent().attr('data-clipboard-text', uuid + "@" + selectedDomain);
 		$('#rss-link').attr('data-clipboard-text', (window.location.origin + window.location.pathname + "/mail/" + uuid + "/rss").replace(RegExp('//mail/', 'g'), "/mail/"));
 	}
@@ -75,7 +79,8 @@
   					time: 1.0
   				});
 				setTimeout(function() {
-        	        		window.location.reload()
+				    localStorage.removeItem('selectedDomain');
+				    window.location.reload()
 				}, 1000)
 		        },
 		        error: function(msg) {
@@ -125,4 +130,3 @@
                 }
         })
 })();
-
