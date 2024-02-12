@@ -4,7 +4,7 @@ services:
     tmpmail:
         image: tmpmail
         container_name: tmpmail
-        command: ["python3", "-u", "/usr/local/tmpmail/main.py", "-port=8080", "-domain=chatgptcn.co.uk,mail.chatgptcn.co.uk"]
+        command: ["python3", "-u", "/usr/local/tmpmail/main.py", "-port=8080", "-domain=chatgptcn.co.uk,mail.chatgptcn.co.uk,freeres.uk,mshtu.online"]
         volumes:
             - /etc/localtime:/etc/localtime:ro
             - /etc/timezone:/etc/timezone:ro
