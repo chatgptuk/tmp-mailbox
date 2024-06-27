@@ -1,4 +1,6 @@
-### 原仓库地址：https://github.com/rev1si0n/another-tmp-mailbox
+This project is tested with BrowserStack
+
+### 基于该项目：https://github.com/rev1si0n/another-tmp-mailbox
 
 添加多域名支持。
 
