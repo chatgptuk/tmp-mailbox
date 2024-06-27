@@ -1,4 +1,4 @@
-This project is tested with BrowserStack
+This project is tested with BrowserStack.
 
 ### 基于该项目：https://github.com/rev1si0n/another-tmp-mailbox
 
